@@ -1,0 +1,24 @@
+[package]
+name = "cyclo-viewer"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+strip = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "cyclo"
+path = "src/cyclo/main.rs"
+
+[[bin]]
+name = "webserver"
+path = "src/web/main.rs"
+
+[dependencies]
+clap = { version = "3.2.20", features = ["derive"] }
+# parsing
+walkdir = "2.3.2"
+tokei = "12.1.2"
+snafu = "0.7.1"
